@@ -18,12 +18,15 @@ ActiveRecord::Schema.define(version: 2019_05_06_175431) do
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.integer "year"
+    t.text "synopsis"
+    t.string "search"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reviews", force: :cascade do |t|
     t.text "content"
+    t.integer "rating"
     t.bigint "user_id"
     t.bigint "movie_id"
     t.datetime "created_at", null: false
@@ -35,7 +38,8 @@ ActiveRecord::Schema.define(version: 2019_05_06_175431) do
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.string "password"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
