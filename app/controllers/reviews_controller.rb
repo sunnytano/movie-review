@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
 
+    before_filter :authorize, only: [:new, :edit, :update]
+    #Add a before_filter to any controller that you want to secure. This will force user's to login before they can see the actions in this controller.
+
     before_action :get_review, only: [:show, :edit, :update, :destroy]
 
     def index

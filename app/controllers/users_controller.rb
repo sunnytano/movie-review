@@ -12,12 +12,14 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
-        if @user.valid?
-            session[:user_id] = user.id
-            redirect_to users_path
-        else
-            redirect_to new_user_path
-        end 
+        redirect_to @user
+        # if @user.valid?
+        #     session[:user_id] = user.id
+        #     redirect_to users_path #notice: "Account created successfully"
+        # else
+        #     #flash[:error] = 'Invalid Login!'
+        #     redirect_to new_user_path
+        # end 
     end 
 
     def update
