@@ -1,0 +1,21 @@
+<%= link_to "Homepage", users_path %>
+
+<h1> Movies! </h1>
+
+<ul>
+<% @movies.each do |movie| %> 
+    <li>
+        <%= movie.title %>
+    </li>
+    <li>
+        <%= movie.year %>
+    </li>
+    <% end %>
+</ul>
+
+
+
+
+
+
+
