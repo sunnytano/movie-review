@@ -1,7 +1,7 @@
 <%= form_for @review do |f| %>
 
     <%= f.label :movie_list %>
-    <%= f.collection_select(:movie_id, Movie.all, :id, :title) %></br></br>
+    <%= f.collection_select(:movie_id, Movie.order(:title), :id, :title) %></br></br>
 
     <%= f.label :review %>
     <%= f.text_field :content %>

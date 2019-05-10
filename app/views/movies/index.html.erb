@@ -10,6 +10,7 @@
     <% if @current_user %>
       <%= form_tag "/logout", method: :delete do %>
         <%= submit_tag "Logout" %></br></br>
+        <%= link_to "Account Info", edit_user_path(@logged_in) %>
       <% end %>
      <% else %>
   <%= link_to "Log in", '/login' %> </br>
@@ -17,7 +18,9 @@
 
 <hr>
 
+<div class = "movies" >
 <h1> Movies! </h1>
+</div>
 
 <%= form_tag(movies_path, method: :get)  do %>
   <% if params[:error] %>

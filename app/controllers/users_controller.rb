@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
     def create
         @user = User.create(user_params)
+        @created_user = @user
+        # byebug
         redirect_to @user
 
         # if @user.valid?
