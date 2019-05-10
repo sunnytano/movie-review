@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_05_06_175431) do
     t.integer "year"
     t.text "synopsis"
     t.string "search"
+    t.string "video"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

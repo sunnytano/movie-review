@@ -1,6 +1,16 @@
-<%= link_to "Homepage", users_path %>
+<div class = 'container'>
+<% if @logged_in %>
+<%= form_tag "/logout", method: :delete do %>
+  <%= submit_tag "Logout" %>
+  <% end %>
+    <% else %>
+  <%= link_to "Log in", '/login' %> </br>
+<% end %>
+
+<%= link_to "Homepage", movies_path %>
 
 <h1> Welcome, <%= @user.to_s %>! </h1>
+<h2> Username: <%= @user.username %> </h2>
 
 <%= link_to "Edit Profile", edit_user_path %> 
-
+</div>

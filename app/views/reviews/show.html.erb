@@ -1,8 +1,16 @@
-<%= link_to "Homepage", users_path %>
-<%= link_to "Movies", movies_path %>
+<%= form_tag "/logout", method: :delete do %>
+    <%= submit_tag "Logout" %>
+  <% end %>
 
-<h1> Here is your Review </h1> 
-<h4> <%= @review.content %>! </h4>
+</br>
+<%= link_to "Search More Current Movies", movies_path %></br>
+
+<%= link_to "Back to Review Page", movie_path(@review.movie_id) %>
+
+<h1> <%= @review.user %>'s Review for <%= @review.movie.title %> </h1>
+
+<p> <%= @review.content %>! </p>
+
 
 <%= link_to "Edit Review", edit_review_path %> 
 <%= button_to "delete", review_path(@review), method: :delete %>

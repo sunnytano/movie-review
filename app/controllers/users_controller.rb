@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+    before_action :authorize, only: [:edit]
     before_action :get_user, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -10,9 +11,23 @@ class UsersController < ApplicationController
         @user = User.new
     end 
 
+    def show 
+        # byebug
+        # @user = current_user
+        @logged_in = current_user
+    end 
+
     def create
         @user = User.create(user_params)
         redirect_to @user
+
+        # if @user.valid?
+        #     log_in_user(@user.id)
+        #     redirect_to users_path
+        # else 
+        #     @errors = @user.errors.full_messages
+        #     render :new
+        # end 
         # if @user.valid?
         #     session[:user_id] = user.id
         #     redirect_to users_path #notice: "Account created successfully"
@@ -35,11 +50,12 @@ class UsersController < ApplicationController
     private 
 
     def get_user
+        # byebug
         @user = User.find(params[:id])
     end 
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :password, :password_confirmation)
+        params.require(:user).permit(:username, :first_name, :last_name, :password, :password_confirmation)
     end 
 
 end

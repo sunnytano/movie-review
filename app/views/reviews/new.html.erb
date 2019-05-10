@@ -1,4 +1,8 @@
-<%= link_to "Homepage", users_path %>
+<%= form_tag "/logout", method: :delete do %>
+    <%= submit_tag "Logout" %>
+  <% end %>
+  
+<%= link_to "Homepage", users_path %></br></br>
 <%= link_to "Movies", movies_path %>
 
 <h1> Write a Review!</h1>

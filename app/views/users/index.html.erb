@@ -1,12 +1,12 @@
-<h3> <%= link_to "Reviews", reviews_path %> </h3>
-<h3> <%= link_to "Movies", movies_path %> </h3>
-
+<%= form_tag "/logout", method: :delete do %>
+    <%= submit_tag "Logout" %>
+  <% end %>
+  
 <hr>
 
-<h1> Welcome to the Movie App! </h1>
+<h1> Welcome to the Movie App, <%= @user.to_s %>! </h1>
 
-<h2>Login</h2>
-<h2> <%= link_to "Sign Up", new_user_path %> </h2>
+
 
 
 

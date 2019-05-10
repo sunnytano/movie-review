@@ -1,16 +1,38 @@
-<%= link_to "Homepage", users_path %>
+<% if @logged_in %>
+<%= form_tag "/logout", method: :delete do %>
+  <%= submit_tag "Logout" %></br></br>
+  <%= link_to "Account Info", edit_user_path(@logged_in) %></br>
+  <% end %>
+    <% else %>
+  <%= link_to "Log in", '/login' %> </br>
+<% end %>
 
-<h1>Hello, <%= @user.to_s %>! </h1>
+<%= link_to "Homepage", movies_path %> </br></br> 
 
-<h2> <%= @movie.title %> </h2>
-<h2> <%= @movie.year %> </h2>
-<h3> <%= @movie.synopsis %> </h3>
+<hr>
 
+<h1> <%= @movie.title %> </h1>
+<h3> <%= @movie.year %> </h3>
+<p> <%= @movie.synopsis %> </p>
+
+<iframe width="560" height="315" src="<%= @movie.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h1> Reviews: </h1>
 <ul>
     <% @movie.reviews.each do |review| %>
-
-        review.content
+        <li>
+          <strong>
+             <%= review.content %> 
+          </strong> -- reviewed by
+          <%= review.user.to_s %> </br></br>
+          <% if @logged_in %>
+          <%= link_to "Edit Review", edit_review_path(review) %>
+        </li>
+        <% end %>
     <% end %>
 </ul>
 
-# leave a review 
+<%= link_to "Review This Movie", new_review_path %> 
+</br></br>
+
+

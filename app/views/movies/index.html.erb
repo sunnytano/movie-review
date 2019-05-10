@@ -1,14 +1,38 @@
-<%= link_to "Homepage", users_path %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+
+  <body class="entire_home_page">
+    <% if @current_user %>
+      <%= form_tag "/logout", method: :delete do %>
+        <%= submit_tag "Logout" %></br></br>
+      <% end %>
+     <% else %>
+  <%= link_to "Log in", '/login' %> </br>
+<% end %>
+
+<hr>
 
 <h1> Movies! </h1>
 
-<%= form_tag(movies_path, method: :get) do %>
-    <%= text_field_tag :title %>
-    <%= submit_tag ("Search") %>
-    <% end %>
+<%= form_tag(movies_path, method: :get)  do %>
+  <% if params[:error] %>
+    <p> 
+      <%= params[:error] %>
+     </p>
+       <% end %>
+      <div class = 'row'>
+      <div class = 'form-group col-xs-6 col-md-4'>
+    <%= text_field_tag(:search, params[:search], class: 'form-control search ') %>
+  <%= submit_tag "Search", class: 'btn btn-primary button' %>
+<% end %>
 
-    
-
+  </body>
+</html>
 
 
 

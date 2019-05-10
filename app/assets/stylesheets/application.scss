@@ -10,6 +10,35 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
  */
+
+/*
+ *= require rails_bootstrap_forms
+ */
+
+// @import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+  .entire_home_page {
+    background-image: url("https://i.pinimg.com/originals/ee/6c/85/ee6c850741ef8c350e5f12e3d300de7a.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-blend-mode: lighten;
+}
+
+    .button {
+        margin-top: auto;
+        margin-left: 800px;
+        display: inline;
+    }
+    
+    .search {
+        margin-top: 220px;
+        margin-left: 390px;
+        display: inline;
+    }
+
+  
