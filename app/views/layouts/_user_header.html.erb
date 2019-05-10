@@ -1,0 +1,10 @@
+<ul class="nav nav-pills pull-right">
+  <% if @logged_in %>
+    <li><%= link_to "Sign out", '/logout', :method => :delete %></li>
+  <% else %>
+    <li><%= link_to "Sign in", '/login' %></li>
+    <li><%= link_to "Sign up", new_user_path %></li>
+  <% end %>
+</ul>
+
+

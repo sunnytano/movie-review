@@ -1,25 +1,6 @@
-<% if @logged_in %>
-<div class = 'logout'>
-<%= form_tag "/logout", method: :delete do %>
-  <%= submit_tag "Logout" %></br></br>
-</div>
-<div class = 'account-info'>
-  <%= link_to "Account Info", edit_user_path(@logged_in) %></br>
-  <% end %>
-</div>
-    <% else %>
-  <div class = 'log-in'>
-  <%= link_to "Log in", '/login' %> </br>
-</div>
-<% end %>
-
-<div class = 'homepage'>
-  <%= link_to "Homepage", movies_path %> </br></br> 
-</div>  
-<hr>
 <%= link_to "Review This Movie", new_review_path %> 
-<h1 id = 'title'> <%= @movie.title %> </h1>
-<h3 id = 'year'> <%= @movie.year %> </h3>
+<h1 id = 'title'> <%= @movie.title %>  (<%= @movie.year %>)</h1>
+
 <p id = 'synopsis'> <%= @movie.synopsis %> </p>
 
 <iframe class = 'iframe' width="560" height="315" src="<%= @movie.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -28,15 +9,14 @@
   <div class = 'review-header'>
     <h1> Reviews: </h1>
 </div>
+<div class='review'>
   <ul>
     <% @movie.reviews.each do |review| %>
         <li>
           <strong>
-          <div class='review'>
              <%= review.content %> 
           </strong> -- reviewed by
-          <%= review.user.to_s %> </br></br>
-          </div>
+          <%= review.user.to_s %> 
           <% if @logged_in %>
           <%= link_to "Edit Review", edit_review_path(review) %>
         </li>
@@ -44,7 +24,8 @@
     <% end %>
 </ul>
 </div>
+</div>
 
-</br></br>
+  
 
 

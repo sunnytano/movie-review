@@ -17,6 +17,10 @@ class UsersController < ApplicationController
         @logged_in = current_user
     end 
 
+    def edit
+        @logged_in = current_user
+    end
+
     def create
         @user = User.create(user_params)
         @created_user = @user

@@ -17,8 +17,14 @@
  *= require rails_bootstrap_forms
  */
 
+
 // @import "bootstrap-sprockets";
 @import "bootstrap";
+// @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:700');
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
 
 
   .entire_home_page {
@@ -27,22 +33,28 @@
         background-position: center top;
         background-color: rgba(255, 255, 255, 0.4);
         background-blend-mode: lighten;
+        // font-family: 'Quicksand', sans-serif;
+        font-family: 'Nunito', sans-serif;
     }
 
     .button {
-        margin: auto;
-        display: inline;
+        margin-left: 590px;
+        margin-top: 10px;
+        display: inline block;
     }
 
     .search {
         margin-top: 220px;
-        margin-left: 390px;
-        display: inline;
+        margin-left: 420px;
+        display: inline block;
     }
 
     .movies {
-        margin-top: 10px;
-        margin-left: 400px;
+        margin-top: 60px;
+        margin-left: 480px;
+        font-style: bold;
+        font-size: 120px;
+        font-family: 'Quicksand', sans-serif;
     }
 
   .iframe {
@@ -57,22 +69,25 @@
 
     #year {
         margin-top: 10px;
-        margin-left: 400px;
+        margin-left: 600px;
     }
 
     #synopsis {
         margin-top: 10px;
         margin-left: 170px;
-        color: white
+        color: white;
+        font-size: 30px;
     }
 
     .review {
+        list-style-type: none;
         color: white;
         margin-bottom: 50px;
-        margin-left: 70px;
+        margin-left: 20px;
     }
 
     .review-header {
+        padding-top: 20px;
         margin-bottom: 50px;
         margin-left: 170px;
         color: white;
@@ -115,3 +130,6 @@
         color: white;
       }
       
+    .top-nav {
+        background-color: white;
+    }

@@ -8,9 +8,28 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body class="entire_home_page">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="/">MovieReviewter</a>
+      <form class="form-inline">
+    <div style="padding-left: 10px;">
+      </a>
+    </div>
+  </form>
+</nav>
 
-  <body class = "entire_home_page">
-  
+<div class = "top_nav">
+    <% if @current_user %>
+      <%= form_tag "/logout", method: :delete do %>
+        <%= submit_tag "Logout" %></br></br>
+        <%= link_to "Account Info", edit_user_path(@logged_in) %>
+      <% end %>
+     <% else %>
+  <%= link_to "Log in", '/login' %> </br>
+<% end %>
+</div>
     <%= yield %>
   </body>
 </html>
+
+
