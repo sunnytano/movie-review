@@ -1,24 +1,12 @@
-# README
+# Move Review App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Created with Ruby on Rails  
 
-Things you may want to cover:
+* A user can signup/login/logout using PostgreSQL for database management. 
+* A user can perform full CRUD(Create, Read, Update, Delete).
+* Can edit/update movie reviews and user profiles.
+* Implemented iFrames so User can view movie trailer for each film. 
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
